@@ -26,9 +26,10 @@ function createSquareGrid(row, col){
 
 function randomSquareColor(square){
     let color = Math.floor(Math.random()*16777215).toString(16);
-    square.style.opacity = parseFloat(square.style.opacity) + 0.1;
+    if(parseFloat(square.style.opacity) < 1){
+        square.style.opacity = parseFloat(square.style.opacity) + 0.1;
+    }
     square.style.backgroundColor = "#" + color;
-    console.log(square.style.opacity);
 }
 
 function changeSquareColor(color, square){
