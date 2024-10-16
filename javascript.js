@@ -15,7 +15,10 @@ function createSquareGrid(row, col){
         const square = document.createElement("div");
         square.style.height = squareHeight;
         square.style.width = squareWidth;
-        square.style.backgroundColor = "blue";
+        square.style.backgroundColor = "lightblue";
+        square.addEventListener("onmouseover", () => {
+            square.style.backgroundColor = "pink";
+          });
         container.appendChild(square);
 
     }
