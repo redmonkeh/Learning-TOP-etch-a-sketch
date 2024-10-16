@@ -16,12 +16,20 @@ function createSquareGrid(row, col){
         square.style.height = squareHeight;
         square.style.width = squareWidth;
         square.style.backgroundColor = "lightblue";
-        square.addEventListener("onmouseover", () => {
-            square.style.backgroundColor = "pink";
-          });
+        square.addEventListener("mouseover", function () {
+            changeSquareColor("pink", square);
+        });
+        //square.addEventListener("mouseout", function () {
+        //    changeSquareColor("lightblue", square);
+        //});
+        square.addEventListener("mouseout", changeSquareColor("lightblue", square));
         container.appendChild(square);
 
     }
+}
+
+function changeSquareColor(color, square){
+    square.style.backgroundColor = color;
 }
 
 createSquareGrid(16, 16);
