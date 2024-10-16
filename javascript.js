@@ -39,7 +39,13 @@ function startDrawing(){
             container.firstChild.remove();
         }
         let col = prompt("How many square across?");
+        while (col > 100 || col < 1){
+            col = prompt("Please choose a number from 1 to 100.");
+        }
         let row = prompt("How many squares high?");
+        while (row > 100 || row < 1){
+            row = prompt("Please choose a number from 1 to 100.");
+        }
         createSquareGrid(row, col);
     });
 }
