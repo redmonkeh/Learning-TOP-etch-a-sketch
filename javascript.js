@@ -14,17 +14,21 @@ function createSquareGrid(row, col){
         const square = document.createElement("div");
         square.style.width = squareWidth;
         square.style.backgroundColor = "lightblue";
+        square.style.opacity = 0;
         square.addEventListener("mouseover", function () {
             randomSquareColor(square);
         });
         container.appendChild(square);
+
 
     }
 }
 
 function randomSquareColor(square){
     let color = Math.floor(Math.random()*16777215).toString(16);
+    square.style.opacity = parseFloat(square.style.opacity) + 0.1;
     square.style.backgroundColor = "#" + color;
+    console.log(square.style.opacity);
 }
 
 function changeSquareColor(color, square){
