@@ -4,6 +4,7 @@
 const container = document.querySelector(".container");
 const containerHeight = container.offsetHeight - 4;
 const containerWidth = container.offsetWidth - 4;
+const startButton = document.querySelector("#start");
 
 
 function createSquareGrid(row, col){
@@ -32,4 +33,15 @@ function changeSquareColor(color, square){
     square.style.backgroundColor = color;
 }
 
-createSquareGrid(16, 16);
+function startDrawing(){
+    startButton.addEventListener("click", function(){
+        while(container.firstChild){
+            container.firstChild.remove();
+        }
+        let col = prompt("How many square across?");
+        let row = prompt("How many squares high?");
+        createSquareGrid(row, col);
+    });
+}
+
+startDrawing();
